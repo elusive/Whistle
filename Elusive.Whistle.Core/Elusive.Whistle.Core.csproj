@@ -47,7 +47,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\AnimationHelper.cs" />
     <Compile Include="Controls\CardShape.xaml.cs">
       <DependentUpon>CardShape.xaml</DependentUpon>
     </Compile>
