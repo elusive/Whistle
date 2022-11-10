@@ -1,13 +1,7 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="LowCardSuitComparer.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
+﻿namespace Elusive.Whistle.Core.Model
+{
 using System.Collections.Generic;
 
-namespace Elusive.Whistle.Core.Model
-{
     /// <summary>
     /// Comparer for downtown sorting. (Ace Low)
     /// </summary>

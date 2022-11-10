@@ -1,7 +1,7 @@
+﻿namespace Elusive.Whistle.Core.Model
+{
 ﻿using System;
 
-namespace Elusive.Whistle.Core.Model
-{
     public class Card : IComparable<Card>
     {
         #region Rules

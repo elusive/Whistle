@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
+﻿namespace Elusive.Whistle
+{
 using System.Windows;
 
-namespace Elusive.Whistle
-{
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>

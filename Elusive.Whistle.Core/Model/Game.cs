@@ -1,14 +1,8 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="Game.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
+﻿namespace Elusive.Whistle.Core.Model
+{
 using System;
 using System.Collections.Generic;
 
-namespace Elusive.Whistle.Core.Model
-{
     /// <summary>
     /// Game class for game level settings and operations.
     /// </summary>

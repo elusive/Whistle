@@ -1,13 +1,7 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="Hand.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
+﻿namespace Elusive.Whistle.Core.Model
+{
 using System.Collections.Generic;
 
-namespace Elusive.Whistle.Core.Model
-{
     /// <summary>
     /// Class to represent a single hand of cards in a multiplayer card game.
     /// </summary>

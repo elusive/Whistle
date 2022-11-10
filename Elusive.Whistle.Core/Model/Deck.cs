@@ -1,16 +1,10 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="Deck.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
+﻿namespace Elusive.Whistle.Core.Model
+{
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Elusive.Whistle.Core.Model
-{
     /// <summary>
     /// Class to represent a deck of cards, or a hand of cards, or any
     /// other collection of cards used in the game.  I.e. the dealer's

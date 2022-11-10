@@ -1,23 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿namespace Elusive.Whistle.Core.Controls
+{
+    using Elusive.Whistle.Core.Model;
+
+    using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Elusive.Whistle.Core;
-using Elusive.Whistle.Core.Controls;
-using Elusive.Whistle.Core.Model;
 
-namespace Elusive.Whistle.Core.Controls
-{
     public delegate void CardDragEventHandler(CardShape cardShape, DeckShape oldDeckShape, DeckShape newDeckShape);
 
     /// <summary>

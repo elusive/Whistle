@@ -1,9 +1,3 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="Enum.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
 namespace Elusive.Whistle.Core.Model
 {
     public enum CardSuit
