@@ -1,6 +1,6 @@
 ﻿namespace Elusive.Whistle
 {
-using System.Windows;
+    using System.Windows;
 
     /// <summary>
     /// Interaction logic for App.xaml

@@ -3,9 +3,9 @@
     using Elusive.Whistle.Core.Controls;
     using Elusive.Whistle.Core.Model;
 
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Input;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -38,7 +38,7 @@ using System.Windows.Input;
         private void NewGame()
         {
             // create new game instance for our main window gameshape control
-            GameShape.Game = new Game();
+            GameBoard.Game = new Game();
 
             // call some setup methods to initialize the game components
             SetupDealerDeck();
@@ -94,10 +94,7 @@ using System.Windows.Input;
             Player4Trick.Deck.Draw(_dealer, Player1Trick.Deck.Cards.Count);
         }
 
-        private void PlayCard(Deck playerHand, Deck playerTrick, Card cardToPlay)
-        {
-            
-        }
+
 
         /*
          *  Setup Methods
@@ -106,7 +103,7 @@ using System.Windows.Input;
 
         private void SetupDealerDeck()
         {
-            _dealer = new Deck(1, 13, GameShape.Game);
+            _dealer = new Deck(1, 13, GameBoard.Game);
 
             _dealer.Shuffle(5);
             _dealer.MakeAllCardsDragable(false);
@@ -114,44 +111,44 @@ using System.Windows.Input;
             _dealer.FlipAllCards();
 
             Dealer.Deck = _dealer;
-            GameShape.DeckShapes.Add(Dealer);
+            GameBoard.DeckShapes.Add(Dealer);
             Dealer.DeckMouseLeftButtonDown += new MouseButtonEventHandler(Dealer_DeckMouseLeftButtonDown);
         }
 
         private void SetupTrickDecks()
         {
-            Player1Trick.Deck = new Deck(GameShape.Game) { Enabled = true };
-            Player2Trick.Deck = new Deck(GameShape.Game) { Enabled = true };
-            Player3Trick.Deck = new Deck(GameShape.Game) { Enabled = true };
-            Player4Trick.Deck = new Deck(GameShape.Game) { Enabled = true };
+            Player1Trick.Deck = new Deck(GameBoard.Game) { Enabled = true };
+            Player2Trick.Deck = new Deck(GameBoard.Game) { Enabled = true };
+            Player3Trick.Deck = new Deck(GameBoard.Game) { Enabled = true };
+            Player4Trick.Deck = new Deck(GameBoard.Game) { Enabled = true };
 
             Player1Trick.Deck.MakeAllCardsDragable(false);
             Player2Trick.Deck.MakeAllCardsDragable(false);
             Player3Trick.Deck.MakeAllCardsDragable(false);
             Player4Trick.Deck.MakeAllCardsDragable(false);
 
-            GameShape.DeckShapes.Add(Player1Trick);
-            GameShape.DeckShapes.Add(Player2Trick);
-            GameShape.DeckShapes.Add(Player3Trick);
-            GameShape.DeckShapes.Add(Player4Trick);
+            GameBoard.DeckShapes.Add(Player1Trick);
+            GameBoard.DeckShapes.Add(Player2Trick);
+            GameBoard.DeckShapes.Add(Player3Trick);
+            GameBoard.DeckShapes.Add(Player4Trick);
         }
 
         private void SetupPlayerHandDecks()
         {
-            Player1Hand.Deck = new Deck(GameShape.Game) { Enabled = true };
-            Player2Hand.Deck = new Deck(GameShape.Game) { Enabled = true };
-            Player3Hand.Deck = new Deck(GameShape.Game) { Enabled = true };
-            Player4Hand.Deck = new Deck(GameShape.Game) { Enabled = true };
+            Player1Hand.Deck = new Deck(GameBoard.Game) { Enabled = true };
+            Player2Hand.Deck = new Deck(GameBoard.Game) { Enabled = true };
+            Player3Hand.Deck = new Deck(GameBoard.Game) { Enabled = true };
+            Player4Hand.Deck = new Deck(GameBoard.Game) { Enabled = true };
 
             Player1Hand.Deck.MakeAllCardsDragable(true);
             Player2Hand.Deck.MakeAllCardsDragable(true);
             Player3Hand.Deck.MakeAllCardsDragable(true);
             Player4Hand.Deck.MakeAllCardsDragable(true);
 
-            GameShape.DeckShapes.Add(Player1Hand);
-            GameShape.DeckShapes.Add(Player2Hand);
-            GameShape.DeckShapes.Add(Player3Hand);
-            GameShape.DeckShapes.Add(Player4Hand);
+            GameBoard.DeckShapes.Add(Player1Hand);
+            GameBoard.DeckShapes.Add(Player2Hand);
+            GameBoard.DeckShapes.Add(Player3Hand);
+            GameBoard.DeckShapes.Add(Player4Hand);
         }
 
         #endregion
@@ -162,8 +159,8 @@ using System.Windows.Input;
         {
             NewGame();
 
-            GameShape.CardMouseLeftButtonDown += new MouseButtonEventHandler(GameShape_CardMouseLeftButtonDown);
-            GameShape.CardDrag += new CardDragEventHandler(GameShape_CardDrag);
+            GameBoard.CardMouseLeftButtonDown += new MouseButtonEventHandler(GameShape_CardMouseLeftButtonDown);
+            GameBoard.CardDrag += new CardDragEventHandler(GameShape_CardDrag);
 
         }
 
@@ -196,7 +193,7 @@ using System.Windows.Input;
         {
             // click on player 4 hand will move the clicked card to the player 4 trick
             var card = (CardShape)sender;
-            var gameShape = GameShape.GetGameShape(card.Card.Deck.Game);
+            var gameShape = GameShape.GetGameBoard(card.Card.Deck.Game);
             var cardShape = gameShape.GetCardShape(card.Card);
             var oldDeckShape = gameShape.GetDeckShape(card.Card.Deck);
 

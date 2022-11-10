@@ -3,11 +3,11 @@
     using Elusive.Whistle.Core.Model;
 
     using System;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using System.Windows.Media.Animation;
 
     public delegate void CardDragEventHandler(CardShape cardShape, DeckShape oldDeckShape, DeckShape newDeckShape);
 
@@ -182,7 +182,7 @@ using System.Windows.Media.Animation;
         private void CardVisibleChanged(object sender, EventArgs e)
         {
             // set left and top values
-            var gameShape = GameShape.GetGameShape(this.Card.Deck.Game);
+            var gameShape = GameShape.GetGameBoard(this.Card.Deck.Game);
             var cardShape = gameShape.GetCardShape((Model.Card)sender);
 
             if (double.IsNaN(Canvas.GetLeft(cardShape)))
@@ -204,7 +204,7 @@ using System.Windows.Media.Animation;
         private void CardDeckChanged(object sender, EventArgs e)
         {
             //Get Decks Shapes
-            GameShape gameShape = GameShape.GetGameShape(this.Card.Deck.Game);
+            GameShape gameShape = GameShape.GetGameBoard(this.Card.Deck.Game);
             DeckShape oldDeck = (DeckShape)((Canvas)this.Parent).Parent;
             DeckShape newDeck = gameShape.GetDeckShape(this.Card.Deck);
 
@@ -251,10 +251,9 @@ using System.Windows.Media.Animation;
         private void ImgCardMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (Card != null && Card.IsDragable)
-            {   
-                imgCard.CaptureMouse();
-                isDrag = true;
-                oldMousePos = e.GetPosition(LayoutRoot);
+            {
+                isDrag =imgCard.CaptureMouse();
+                oldMousePos = e.GetPosition(CardCanvas);
             }
 
             if (CardMouseLeftButtonDown != null)
@@ -274,7 +273,7 @@ using System.Windows.Media.Animation;
                 isDrag = false;
 
                 //Get which deck this card was dropped into
-                GameShape gameShape = GameShape.GetGameShape(this.Card.Deck.Game);
+                GameShape gameShape = GameShape.GetGameBoard(this.Card.Deck.Game);
                 DeckShape oldDeckShape = gameShape.GetDeckShape(this.Card.Deck);
                 DeckShape nearestDeckShape = null;
                 double nearestDistance = double.MaxValue;
@@ -322,12 +321,12 @@ using System.Windows.Media.Animation;
         {
             if (isDrag)
             {
-                Point newMousePos = e.GetPosition(LayoutRoot);
+                Point newMousePos = e.GetPosition(CardCanvas);
 
                 double dx = newMousePos.X - oldMousePos.X;
                 double dy = newMousePos.Y - oldMousePos.Y;
 
-                GameShape gameShape = GameShape.GetGameShape(this.Card.Deck.Game);
+                GameShape gameShape = GameShape.GetGameBoard(this.Card.Deck.Game);
 
                 for (int i = this.Card.Deck.Cards.IndexOf(this.Card); i < this.Card.Deck.Cards.Count; i++)
                 {

@@ -115,7 +115,7 @@ using System.Windows.Input;
 
         #region Static Methods
 
-        public static GameShape GetGameShape(Game game)
+        public static GameShape GetGameBoard(Game game)
         {
             for (int i = 0; i < gameShapes.Count; i++)
             {

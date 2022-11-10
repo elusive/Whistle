@@ -126,7 +126,7 @@ using System.Windows.Media.Animation;
         /// </summary>
         public void UpdateCardShapes()
         {
-            GameShape game = GameShape.GetGameShape(Deck.Game);
+            GameShape game = GameShape.GetGameBoard(Deck.Game);
             NextCardX = 0;
             NextCardY = 0;
 
