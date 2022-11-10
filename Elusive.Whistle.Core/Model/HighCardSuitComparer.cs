@@ -1,6 +1,6 @@
 ﻿namespace Elusive.Whistle.Core.Model
 {
-using System.Collections.Generic;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Comparer for uptown sorting (Ace High).

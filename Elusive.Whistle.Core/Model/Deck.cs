@@ -1,9 +1,9 @@
 ﻿namespace Elusive.Whistle.Core.Model
 {
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
     /// <summary>
     /// Class to represent a deck of cards, or a hand of cards, or any
@@ -227,8 +227,10 @@ using System.Text;
         /// <param name="count">The count.</param>
         public void Draw(Deck toDeck, int count)
         {
+            // move the number of cards by changing their deck assignment
             for (var i = 0; i < count; i++)
             {
+                if (TopCard == null) return;  // no cards left
                 TopCard.Deck = toDeck;
             }
         }

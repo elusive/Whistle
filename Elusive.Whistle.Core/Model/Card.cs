@@ -1,6 +1,6 @@
 ﻿namespace Elusive.Whistle.Core.Model
 {
-﻿using System;
+    using System;
 
     public class Card : IComparable<Card>
     {

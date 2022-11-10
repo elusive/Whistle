@@ -1,7 +1,7 @@
 ﻿namespace Elusive.Whistle.Core.Model
 {
-using System;
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Game class for game level settings and operations.

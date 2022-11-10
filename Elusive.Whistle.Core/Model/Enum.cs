@@ -1,4 +1,4 @@
-namespace Elusive.Whistle.Core.Model
+﻿namespace Elusive.Whistle.Core.Model
 {
     public enum CardSuit
     {

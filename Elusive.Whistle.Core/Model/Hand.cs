@@ -1,6 +1,6 @@
 ﻿namespace Elusive.Whistle.Core.Model
 {
-using System.Collections.Generic;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Class to represent a single hand of cards in a multiplayer card game.
