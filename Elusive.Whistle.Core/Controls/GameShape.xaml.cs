@@ -2,9 +2,9 @@
 {
     using Elusive.Whistle.Core.Model;
 
-using System.Collections.Generic;
-using System.Windows.Controls;
-using System.Windows.Input;
+    using System.Collections.Generic;
+    using System.Windows.Controls;
+    using System.Windows.Input;
 
     public partial class GameShape : UserControl
     {
@@ -143,10 +143,10 @@ using System.Windows.Input;
             cardShape.Card = card;
             CardShapes.Add(cardShape);
 
-            cardShape.CardMouseLeftButtonDown += new MouseButtonEventHandler(cardShape_MouseLeftButtonDown);
-            cardShape.CardMouseLeftButtonUp += new MouseButtonEventHandler(cardShape_MouseLeftButtonUp);
-            cardShape.CardMouseEnter += new MouseEventHandler(cardShape_MouseEnter);
-            cardShape.CardMouseLeave += new MouseEventHandler(cardShape_MouseLeave);
+            //cardShape.CardMouseLeftButtonDown += new MouseButtonEventHandler(cardShape_MouseLeftButtonDown);
+            //cardShape.CardMouseLeftButtonUp += new MouseButtonEventHandler(cardShape_MouseLeftButtonUp);
+            //cardShape.CardMouseEnter += new MouseEventHandler(cardShape_MouseEnter);
+            //cardShape.CardMouseLeave += new MouseEventHandler(cardShape_MouseLeave);
             cardShape.CardMouseMove += new MouseEventHandler(cardShape_MouseMove);
             cardShape.CardDrag += new CardDragEventHandler(cardShape_CardDrag);
 
