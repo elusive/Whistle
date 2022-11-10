@@ -2,12 +2,12 @@
 {
     using Elusive.Whistle.Core.Model;
 
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media.Animation;
+    using System;
+    using System.Collections.Generic;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Input;
+    using System.Windows.Media.Animation;
 
     /// <summary>
     /// Interaction logic for DeckShape.xaml
@@ -16,7 +16,7 @@ using System.Windows.Media.Animation;
     {
         #region Static Properties
 
-        private static List<DeckShape> playingDecks = new List<DeckShape>();
+        private static List<DeckShape> allDecks = new List<DeckShape>();
 
         #endregion
 
@@ -102,8 +102,8 @@ using System.Windows.Media.Animation;
         {
             InitializeComponent();
 
-            playingDecks.Add(this);
-            rectBorder.Visibility = Visibility.Collapsed;
+            allDecks.Add(this);
+            rectBorderHighlight.Visibility = Visibility.Collapsed;
         }
 
         #endregion
@@ -212,8 +212,8 @@ using System.Windows.Media.Animation;
 
         private void RectBorderBackMouseEnter(object sender, MouseEventArgs e)
         {
-            if (Deck != null && Deck.Enabled)
-                rectBorder.Visibility = Visibility.Visible;
+            if (Deck != null && Deck.Enabled && !Deck.HasCards)
+                rectBorderHighlight.Visibility = Visibility.Visible;
 
             if (DeckMouseEnter != null)
                 DeckMouseEnter(this, e);
@@ -222,7 +222,7 @@ using System.Windows.Media.Animation;
         private void RectBorderBackMouseLeave(object sender, MouseEventArgs e)
         {
             if (Deck != null && Deck.Enabled)
-                rectBorder.Visibility = Visibility.Collapsed;
+                rectBorderHighlight.Visibility = Visibility.Collapsed;
 
             if (DeckMouseLeave != null)
                 DeckMouseLeave(this, e);
